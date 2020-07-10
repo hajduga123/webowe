@@ -10,7 +10,7 @@ $app = new Silex\Application();
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver'   => 'pdo_mysql',
-        'dbname' =>'projekt',
+        'dbname' => 'super-crm',
         'user' => 'root',
         'password' => '',
         'charset' => 'UTF8'
@@ -62,7 +62,7 @@ class DataProvider {
     {
         unset($data['id']);
 
-        $result = $this->db->insert('clients', $insertData);
+        $result = $this->db->insert('clients', $data);
 
         if(!$result){
             return false;
